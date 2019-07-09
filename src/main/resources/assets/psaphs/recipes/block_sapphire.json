@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "AAA",
+        "AAA",
+        "AAA"
+    ],
+    "key": {
+        "A": [{
+            "item": "psaphs:ingot_sapphire"
+        }]
+    },
+    "result": {
+        "item": "psaphs:block_sapphire",
+        "data": 0
+    }
+}

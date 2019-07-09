@@ -1,0 +1,16 @@
+[
+{
+  "modid": "psaphs",
+  "name": "Pure Sapphires",
+  "description": "Another Sapphire Mod.",
+  "version": "1.0",
+  "mcversion": "1.12.2",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Puretie"],
+  "credits": "Cyberpwn, for getting me into this shit. But mostly StackOverflow, for actually doing it for me.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

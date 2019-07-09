@@ -1,0 +1,5 @@
+item.ingot_sapphire.name=Sapphire
+tile.block_sapphire.name=Sapphire Block
+tile.ore_sapphire.name=Sapphire Ore
+item.sapphire_pickaxe.name=Sapphire Pickaxe
+itemGroup.tabPsaphsMod=Pure Sapphires
