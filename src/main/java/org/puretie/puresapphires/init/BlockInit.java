@@ -7,7 +7,6 @@ import org.puretie.puresapphires.util.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -26,11 +25,10 @@ public class BlockInit
 	{
 		sapphireBlock = new BlockBase("block_sapphire", Material.ROCK).setHardness(1.5f).setCreativeTab(ItemInit.tabPsaphsMod).setLightLevel(0.4f);
 		sapphireBlock.setHarvestLevel("pickaxe", 2);
-		
+
 		sapphireOreBlock = new BlockOre("ore_sapphire", Material.ROCK, ItemInit.sapphireIngot, 1).setHardness(3f).setResistance(5f).setCreativeTab(ItemInit.tabPsaphsMod);
 		sapphireOreBlock.setHarvestLevel("pickaxe", 2);
-		
-		
+
 	}
 
 	@SubscribeEvent
@@ -55,6 +53,6 @@ public class BlockInit
 
 	public static void registerRender(Item item)
 	{
-		ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation( item.getRegistryName(), "inventory"));
+		ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
 	}
 }

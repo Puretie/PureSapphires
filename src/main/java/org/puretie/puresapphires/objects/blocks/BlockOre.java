@@ -4,7 +4,10 @@ import java.util.Random;
 
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 
 public class BlockOre extends BlockBase
 {
@@ -65,5 +68,11 @@ public class BlockOre extends BlockBase
 			return this.QuantityDropped(random);
 		}
 	}
-
+	
+	@Override
+	public void onBlockHarvested(World world, BlockPos pos, IBlockState state, EntityPlayer player)
+	{
+		//BUG: Not checking if broken with proper tool.
+	    this.dropXpOnBlockBreak(world, pos, 1 + world.rand.nextInt(2));
+	}
 }

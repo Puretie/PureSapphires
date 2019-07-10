@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " # ",
+        " # ",
+        " / "
+    ],
+    "key": {
+        "#": {
+            "item": "psaphs:ingot_sapphire"
+        },
+        "/": {
+            "item": "minecraft:stick"
+        }
+    },
+    "result": {
+        "item": "psaphs:sapphire_sword",
+        "count": 1
+    }
+}

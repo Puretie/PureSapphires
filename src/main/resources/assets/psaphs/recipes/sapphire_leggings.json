@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "# #",
+        "# #"
+    ],
+    "key": {
+        "#": {
+            "item": "psaphs:ingot_sapphire"
+        }
+    },
+    "result": {
+        "item": "psaphs:sapphire_leggings",
+        "count": 1
+    }
+}

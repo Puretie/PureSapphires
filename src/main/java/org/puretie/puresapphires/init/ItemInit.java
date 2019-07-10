@@ -1,13 +1,21 @@
 package org.puretie.puresapphires.init;
 
 import org.puretie.puresapphires.objects.items.ItemBase;
+import org.puretie.puresapphires.objects.items.armors.ItemCustomArmor;
+import org.puretie.puresapphires.objects.items.tools.ItemCustomAxe;
+import org.puretie.puresapphires.objects.items.tools.ItemCustomHoe;
 import org.puretie.puresapphires.objects.items.tools.ItemCustomPickaxe;
+import org.puretie.puresapphires.objects.items.tools.ItemCustomSpade;
+import org.puretie.puresapphires.objects.items.tools.ItemCustomSword;
 import org.puretie.puresapphires.util.Reference;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.SoundEvents;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
@@ -26,8 +34,14 @@ public class ItemInit
 	static Item sapphireSpade;
 	static Item sapphireHoe;
 	static Item sapphireSword;
+	static Item sapphireHelmet;
+	static Item sapphireChestplate;
+	static Item sapphireLeggings;
+	static Item sapphireBoots;
 
 	public static final ToolMaterial SAPPHIREMATERIAL = EnumHelper.addToolMaterial("SAPPHIREMATERIAL", 3, 780, 8f, 3f, 10);
+	public static final ArmorMaterial SAPPHIREARMOR = EnumHelper.addArmorMaterial(Reference.MOD_ID + ":" + "sapphire_armor", Reference.MOD_ID + ":sapphire", 160, new int[]{2, 5, 6, 3}, 5, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0);
+
 
 	public static final CreativeTabs tabPsaphsMod = new CreativeTabs("tabPsaphsMod")
 	{
@@ -48,12 +62,20 @@ public class ItemInit
 	{
 		sapphireIngot = new ItemBase("ingot_sapphire").setCreativeTab(tabPsaphsMod).setMaxStackSize(32);
 		sapphirePickaxe = new ItemCustomPickaxe("sapphire_pickaxe", SAPPHIREMATERIAL).setCreativeTab(tabPsaphsMod);
+		sapphireAxe = new ItemCustomAxe("sapphire_axe", SAPPHIREMATERIAL, 9.0f, 2.8f).setCreativeTab(tabPsaphsMod);
+		sapphireSword = new ItemCustomSword("sapphire_sword", SAPPHIREMATERIAL).setCreativeTab(tabPsaphsMod);
+		sapphireSpade = new ItemCustomSpade("sapphire_spade", SAPPHIREMATERIAL).setCreativeTab(tabPsaphsMod);
+		sapphireHoe = new ItemCustomHoe("sapphire_hoe", SAPPHIREMATERIAL).setCreativeTab(tabPsaphsMod);
+		sapphireHelmet = new ItemCustomArmor("sapphire_helmet", SAPPHIREARMOR, EntityEquipmentSlot.HEAD).setCreativeTab(tabPsaphsMod);
+		sapphireChestplate = new ItemCustomArmor("sapphire_chestplate", SAPPHIREARMOR, EntityEquipmentSlot.CHEST).setCreativeTab(tabPsaphsMod);
+		sapphireLeggings = new ItemCustomArmor("sapphire_leggings", SAPPHIREARMOR, EntityEquipmentSlot.LEGS).setCreativeTab(tabPsaphsMod);
+		sapphireBoots = new ItemCustomArmor("sapphire_boots", SAPPHIREARMOR, EntityEquipmentSlot.FEET).setCreativeTab(tabPsaphsMod);
 	}
 
 	@SubscribeEvent
 	public static void registerItems(RegistryEvent.Register<Item> event)
 	{
-		event.getRegistry().registerAll(sapphireIngot, sapphirePickaxe);
+		event.getRegistry().registerAll(sapphireIngot, sapphirePickaxe, sapphireAxe, sapphireSword, sapphireSpade, sapphireHoe, sapphireHelmet, sapphireChestplate, sapphireLeggings, sapphireBoots);
 	}
 
 	@SubscribeEvent
@@ -61,6 +83,14 @@ public class ItemInit
 	{
 		registerRender(sapphireIngot);
 		registerRender(sapphirePickaxe);
+		registerRender(sapphireAxe);
+		registerRender(sapphireSword);
+		registerRender(sapphireSpade);
+		registerRender(sapphireHoe);
+		registerRender(sapphireHelmet);
+		registerRender(sapphireChestplate);
+		registerRender(sapphireLeggings);
+		registerRender(sapphireBoots);
 	}
 	
 
