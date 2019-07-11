@@ -73,6 +73,6 @@ public class BlockOre extends BlockBase
 	public void onBlockHarvested(World world, BlockPos pos, IBlockState state, EntityPlayer player)
 	{
 		//BUG: Not checking if broken with proper tool.
-	    this.dropXpOnBlockBreak(world, pos, 1 + world.rand.nextInt(2));
+	    this.dropXpOnBlockBreak(world, pos, 2 + world.rand.nextInt(2));
 	}
 }

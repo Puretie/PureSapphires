@@ -1,7 +1,7 @@
 package org.puretie.puresapphires.init;
 
-import org.puretie.puresapphires.objects.blocks.BlockBase;
 import org.puretie.puresapphires.objects.blocks.BlockOre;
+import org.puretie.puresapphires.objects.blocks.SapphireBlock;
 import org.puretie.puresapphires.util.Reference;
 
 import net.minecraft.block.Block;
@@ -23,7 +23,7 @@ public class BlockInit
 
 	public static void init()
 	{
-		sapphireBlock = new BlockBase("block_sapphire", Material.ROCK).setHardness(1.5f).setCreativeTab(ItemInit.tabPsaphsMod).setLightLevel(0.4f);
+		sapphireBlock = new SapphireBlock("block_sapphire", Material.IRON).setHardness(1.5f).setCreativeTab(ItemInit.tabPsaphsMod);
 		sapphireBlock.setHarvestLevel("pickaxe", 2);
 
 		sapphireOreBlock = new BlockOre("ore_sapphire", Material.ROCK, ItemInit.sapphireIngot, 1).setHardness(3f).setResistance(5f).setCreativeTab(ItemInit.tabPsaphsMod);

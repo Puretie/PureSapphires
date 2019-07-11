@@ -54,9 +54,9 @@ public class ItemInit
 		@Override
 		public boolean hasSearchBar()
 		{
-			return true;
+			return false;
 		}
-	}.setBackgroundImageName("item_search.png");
+	};
 
 	public static void init()
 	{
