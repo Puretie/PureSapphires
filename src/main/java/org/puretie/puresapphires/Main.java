@@ -4,6 +4,7 @@ import org.puretie.puresapphires.init.BlockInit;
 import org.puretie.puresapphires.init.ItemInit;
 import org.puretie.puresapphires.proxy.CommonProxy;
 import org.puretie.puresapphires.util.Reference;
+import org.puretie.puresapphires.worldgen.OreGen;
 
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -12,6 +13,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.NAME, version = Reference.VERSION)
 public class Main
@@ -34,6 +36,7 @@ public class Main
 	public static void init(FMLInitializationEvent event)
 	{
 		System.out.println(Reference.MOD_ID + ":Init");
+		GameRegistry.registerWorldGenerator(new OreGen(), 0);
 	}
 
 	@EventHandler
