@@ -1,6 +1,8 @@
 package org.puretie.puresapphires.init;
 
 import org.puretie.puresapphires.objects.items.ItemBase;
+import org.puretie.puresapphires.objects.items.ItemCustomFood;
+import org.puretie.puresapphires.objects.items.ItemSeedsBase;
 import org.puretie.puresapphires.objects.items.armors.ItemCustomArmor;
 import org.puretie.puresapphires.objects.items.tools.ItemCustomAxe;
 import org.puretie.puresapphires.objects.items.tools.ItemCustomHoe;
@@ -28,7 +30,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 public class ItemInit
 {
 
-	static Item sapphireIngot;
+	public static Item sapphireIngot;
 	static Item sapphirePickaxe;
 	static Item sapphireAxe;
 	static Item sapphireSpade;
@@ -38,6 +40,8 @@ public class ItemInit
 	static Item sapphireChestplate;
 	static Item sapphireLeggings;
 	static Item sapphireBoots;
+	public static Item indiCarrot;
+	public static Item indiCarrotSeeds;
 
 	public static final ToolMaterial SAPPHIREMATERIAL = EnumHelper.addToolMaterial("SAPPHIREMATERIAL", 3, 780, 8f, 3f, 10);
 	public static final ArmorMaterial SAPPHIREARMOR = EnumHelper.addArmorMaterial(Reference.MOD_ID + ":" + "sapphire_armor", Reference.MOD_ID + ":sapphire", 160, new int[]{2, 5, 6, 3}, 5, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0);
@@ -70,12 +74,14 @@ public class ItemInit
 		sapphireChestplate = new ItemCustomArmor("sapphire_chestplate", SAPPHIREARMOR, EntityEquipmentSlot.CHEST).setCreativeTab(tabPsaphsMod);
 		sapphireLeggings = new ItemCustomArmor("sapphire_leggings", SAPPHIREARMOR, EntityEquipmentSlot.LEGS).setCreativeTab(tabPsaphsMod);
 		sapphireBoots = new ItemCustomArmor("sapphire_boots", SAPPHIREARMOR, EntityEquipmentSlot.FEET).setCreativeTab(tabPsaphsMod);
+		
+		indiCarrot = new ItemCustomFood("indi_carrot", 5, 0.3f, false).setCreativeTab(tabPsaphsMod);
 	}
 
 	@SubscribeEvent
 	public static void registerItems(RegistryEvent.Register<Item> event)
 	{
-		event.getRegistry().registerAll(sapphireIngot, sapphirePickaxe, sapphireAxe, sapphireSword, sapphireSpade, sapphireHoe, sapphireHelmet, sapphireChestplate, sapphireLeggings, sapphireBoots);
+		event.getRegistry().registerAll(sapphireIngot, sapphirePickaxe, sapphireAxe, sapphireSword, sapphireSpade, sapphireHoe, sapphireHelmet, sapphireChestplate, sapphireLeggings, sapphireBoots, indiCarrot, indiCarrotSeeds);
 	}
 
 	@SubscribeEvent
@@ -91,6 +97,8 @@ public class ItemInit
 		registerRender(sapphireChestplate);
 		registerRender(sapphireLeggings);
 		registerRender(sapphireBoots);
+		registerRender(indiCarrot);
+		registerRender(indiCarrotSeeds);
 	}
 	
 
